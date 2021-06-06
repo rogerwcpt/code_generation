@@ -22,6 +22,7 @@ https://github.com/adoconnection/RazorEngineCore
 
 ### Disadvantages
 - Not part of the official .NET Core offering
+- Much slower than other generators
 
 #### Sample
 ```html
@@ -109,7 +110,16 @@ Scriban project (which supports Liquid templates as well) can be found here:  ht
 - Can't embed C# helper methods
 
 
-#### Template Output
+## Performance 
+
+|Engine|Time (ms)|
+|------|---------|
+|T4|3|
+|Liquid|127|
+|Xsl|303|
+|Razor|2392|
+
+## Template Output
 <img src="https://user-images.githubusercontent.com/13134927/120923467-00453e80-c6cf-11eb-88b0-3e36d682f6ce.png" width="400px" />
 
 
