@@ -109,6 +109,17 @@ Scriban project (which supports Liquid templates as well) can be found here:  ht
 - Syntax might get confusing if you're used to Razor syntax
 - Can't embed C# helper methods
 
+#### Sample
+```html
+<h3>FullName: {{ full_name }}</h3>
+<h3>Skills:</h3>
+<ul>
+    {% for skill in skills %}
+    <li> {{ skill }} </li>
+    {% endfor %}
+</ul>
+```
+
 
 ## Performance 
 
