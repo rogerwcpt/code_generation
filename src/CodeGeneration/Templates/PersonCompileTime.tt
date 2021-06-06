@@ -10,7 +10,7 @@
 <h3>Company: <#= @Model.Company #></h3>
 <h3>Skills:</h3>
 <ul>
-<# foreach (var skill in @Model.Skills)  { #>
+<# foreach (var skill in Model.Skills)  { #>
     <li><#=skill#></li>
 <# } #>
 </ul>
