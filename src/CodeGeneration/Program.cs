@@ -4,13 +4,16 @@ using System.IO;
 using System.Reflection;
 using System.Reflection.Emit;
 using CodeGeneration.Generators;
+using CodeGeneration.Helpers;
 using CodeGeneration.Models;
 
 namespace CodeGeneration
 {
     class Program
     {
-        private static ICodeGenerator razorGenerator = new RazorCodeGenerator(); 
+        private static readonly ICodeGenerator RazorGenerator = new RazorCodeGenerator();
+        private static readonly ICodeGenerator T4Generator = new T4CodeGenerator();
+
         static void Main(string[] args)
         {
             var exePath = Assembly.GetExecutingAssembly().Location;
@@ -24,14 +27,22 @@ namespace CodeGeneration
                 Skills = new [] { "C#", "Razor", "XML", "HTML" }
             };
 
-            var razorResult = razorGenerator.Generate(rootPath, "Employee.razor", model);
-            OutputToConsole<ICodeGenerator>(razorResult);
+            using (_ = new StopWatchLogger())
+            {
+                var razorResult = RazorGenerator.Generate(rootPath, "PersonRunTime.razor", model);
+                OutputToConsole(RazorGenerator, razorResult);
+            }
+
+            using (_ = new StopWatchLogger())
+            {
+                var t4Result = T4Generator.Generate(rootPath, "PersonCompileTime.tt", model);
+                OutputToConsole(RazorGenerator, t4Result);
+            }
         }       
 
-        private static void OutputToConsole<T>(string output)
+        private static void OutputToConsole(ICodeGenerator codeGenerator, string output)
         {
-            var generatorType = typeof(T);
-            Console.WriteLine($"Code Output of {generatorType}:");
+            Console.WriteLine($"Code Output of {codeGenerator.Name}:");
             Console.WriteLine(output);
         }
     }

@@ -6,16 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="RazorEngineCore" Version="2021.3.1" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Templates\Employee.razor" />
-    <Content Include="Templates\Employee.razor">
+    <Content Include="Templates\PersonRunTime.razor">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
