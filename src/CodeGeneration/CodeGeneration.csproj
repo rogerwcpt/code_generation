@@ -15,6 +15,10 @@
     <Content Include="Templates\PersonRunTime.razor">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Remove="Templates\PersonRunTime.xsl" />
+    <Content Include="Templates\PersonRunTime.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

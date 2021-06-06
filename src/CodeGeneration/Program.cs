@@ -13,6 +13,7 @@ namespace CodeGeneration
     {
         private static readonly ICodeGenerator RazorGenerator = new RazorCodeGenerator();
         private static readonly ICodeGenerator T4Generator = new T4CodeGenerator();
+        private static readonly ICodeGenerator XslGenerator = new XslCodeGenerator();
 
         static void Main(string[] args)
         {
@@ -36,6 +37,12 @@ namespace CodeGeneration
             using (_ = new StopWatchLogger())
             {
                 var t4Result = T4Generator.Generate(rootPath, "PersonCompileTime.tt", model);
+                OutputToConsole(RazorGenerator, t4Result);
+            }
+            
+            using (_ = new StopWatchLogger())
+            {
+                var t4Result = XslGenerator.Generate(rootPath, "PersonRunTime.xsl", model);
                 OutputToConsole(RazorGenerator, t4Result);
             }
         }       
