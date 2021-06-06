@@ -45,7 +45,7 @@ namespace CodeGeneration.Templates
             this.Write("</h3>\n<h3>Skills:</h3>\n<ul>\n");
             
             #line 13 "/Users/rogerweiss/Projects/GitHub.Personal/code_generation/src/CodeGeneration/Templates/PersonCompileTime.tt"
- foreach (var skill in @Model.Skills)  { 
+ foreach (var skill in Model.Skills)  { 
             
             #line default
             #line hidden
@@ -76,6 +76,7 @@ namespace CodeGeneration.Templates
             
             #line default
             #line hidden
+            this.Write("\n<h5>Sample C# Generated Code</h5>\n\n<pre>\n  <code>\n    public class PersonModel\n    {\n        public string FullName { get; set;  }\n        public string EmailAddress { get; set;  }\n        public string[] Skills { get; set;  }\n        public string Company { get; set; }\n    }\n  </code>\n</pre>");
             return this.GenerationEnvironment.ToString();
         }
     }

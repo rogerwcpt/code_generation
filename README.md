@@ -1,6 +1,6 @@
 # Code Generators in .NET Core
 
-This project attempts to explore and compare the code generation options available in .NET Core.
+This project attempts to explore and compare the code generation options available in .NET Core, specifically those that are template based and generate code from a given model.
 
 The 3 that are included so far are
 
@@ -41,8 +41,7 @@ T4 templates have been around a long time, but similar to the Razor Templates th
 https://github.com/mono/t4
 
 ### Advantages
-- Can be used as a dotnet cli tool
-- Can embed C# code
+- Can embed C# helper methods to aid in code generation
 
 ### Disadvantages
 - T4 Syntax Feels outdated syntax compared to razor
@@ -71,12 +70,14 @@ Xsl templates have been around for decades and a W3C standard and has been suppo
 ### Advantages
 - Is a an official W3 standard.  
 - Supported in from .NET 1.0 to latest .NET and .NET Core
+- Most IDEs have great intellisense ,despite being a standalone template
+
 
 ### Disadvantages
-- More geared for xml output
+- Geared more for xml-type (includingHTML) output
 - Syntax not as simple as Razor  
 - Have to deal with xml namespaces and verbose syntax
-- Embedding C# code not possible in .NET Core
+- Cannot embed C# helper methods to aid in code generation
 
 
 #### Sample

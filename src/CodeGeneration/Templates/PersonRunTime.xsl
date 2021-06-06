@@ -12,5 +12,17 @@
                 <li><xsl:value-of select="."/></li>
             </xsl:for-each>
         </ul>
+        <h5>Sample C# Generated Code</h5>
+        <pre>
+            <code>
+                public class PersonModel
+                {
+                public string FullName { get; set;  }
+                public string EmailAddress { get; set;  }
+                public string[] Skills { get; set;  }
+                public string Company { get; set; }
+                }
+            </code>
+        </pre>  
     </xsl:template>
 </xsl:stylesheet> 

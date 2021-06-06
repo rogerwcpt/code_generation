@@ -6,11 +6,26 @@
 <h3>Company: @Model.Company</h3>
 <h3>Skills:</h3>
 <ul>
-@foreach (var skill in @Model.Skills)
-{
-    <li>@skill</li>
-}
+    @foreach (var skill in @Model.Skills)
+    {
+        <li>@skill</li>
+    }
 </ul>
+<h5>Sample C# Generated Code</h5>
+
+<pre>
+  <code>
+    public class PersonModel
+    {
+        public string FullName { get; set;  }
+        public string EmailAddress { get; set;  }
+        public string[] Skills { get; set;  }
+        public string Company { get; set; }
+    }
+  </code>
+</pre>
+
+
 @{
     string UpperCaseNames(string name)
     {
