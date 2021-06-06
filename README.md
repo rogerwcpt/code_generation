@@ -110,6 +110,6 @@ Scriban project (which supports Liquid templates as well) can be found here:  ht
 
 
 #### Template Output
-![image](https://user-images.githubusercontent.com/13134927/120923467-00453e80-c6cf-11eb-88b0-3e36d682f6ce.png){:width="300px"}
+![image](https://user-images.githubusercontent.com/13134927/120923467-00453e80-c6cf-11eb-88b0-3e36d682f6ce.png){width="300px"}
 
 
