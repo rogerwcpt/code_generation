@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="RazorEngineCore" Version="2021.3.1" />
+    <PackageReference Include="Mono.TextTemplating" Version="2.2.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,4 +17,15 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Templates\PersonCompileTime.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PersonCompileTime.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Templates\PersonCompileTime.cs">
+      <DependentUpon>PersonCompileTime.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

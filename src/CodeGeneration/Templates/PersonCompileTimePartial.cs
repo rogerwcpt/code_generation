@@ -1,4 +1,3 @@
-﻿using System;
 using CodeGeneration.Models;
 
 namespace CodeGeneration.Templates
@@ -7,9 +6,9 @@ namespace CodeGeneration.Templates
     {
         public readonly PersonModel Model;
 
-        public PersonCompileTime(PersonModel personModel)
+        public PersonCompileTime(PersonModel model)
         {
-            this.Model = personModel;
+            Model = model;
         }
     }
 }
