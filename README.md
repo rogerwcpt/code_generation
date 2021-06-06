@@ -7,7 +7,7 @@ The 3 that are included so far are
 1. Razor Templates ([reference docs](https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/razor-html-templates/))
 2. T4 Templates ([reference docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019))
 3. XSL Templates ([reference docs](https://www.w3.org/Style/XSL/))
-4. Scriban or Liquid Templates (reference [here](https://shopify.github.io/liquid/)
+4. Scriban or Liquid Templates ([reference docs](https://shopify.github.io/liquid/))
 
 ## Razor Templates
 
@@ -110,6 +110,6 @@ Scriban project (which supports Liquid templates as well) can be found here:  ht
 
 
 #### Template Output
-![image](https://user-images.githubusercontent.com/13134927/120923467-00453e80-c6cf-11eb-88b0-3e36d682f6ce.png){width="300px"}
+<img src="https://user-images.githubusercontent.com/13134927/120923467-00453e80-c6cf-11eb-88b0-3e36d682f6ce.png" width="400px" />
 
 
