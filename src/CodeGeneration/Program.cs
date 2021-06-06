@@ -13,6 +13,7 @@ namespace CodeGeneration
         private static readonly ICodeGenerator T4Generator = new T4CodeGenerator();
         private static readonly ICodeGenerator XslGenerator = new XslCodeGenerator();
         private static readonly ICodeGenerator LiquidGenerator = new LiquidGenerator();
+        private static readonly ICodeGenerator MustacheGenerator = new MustacheGenerator();
 
         static void Main(string[] args)
         {
@@ -49,6 +50,12 @@ namespace CodeGeneration
             {
                 var liquidResult = LiquidGenerator.Generate(rootPath, "PersonRunTime.liquid", model);
                 OutputToConsole(LiquidGenerator, liquidResult);
+            }
+            
+            using (_ = new StopWatchLogger())
+            {
+                var moustacheResult  = MustacheGenerator.Generate(rootPath, "PersonRunTime.mustache", model);
+                OutputToConsole(MustacheGenerator, moustacheResult);
             }
         }       
 

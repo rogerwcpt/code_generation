@@ -2,16 +2,17 @@
 
 This project attempts to explore and compare the code generation options available in .NET Core, specifically those that are template based and generate code from a given model.
 
-The 4 that are included so far are
+The templates that are included so far are
 
 1. Razor Templates ([reference docs](https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/razor-html-templates/))
-2. T4 Templates ([reference docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019))
-3. XSL Templates ([reference docs](https://www.w3.org/Style/XSL/))
-4. Scriban or Liquid Templates ([reference docs](https://shopify.github.io/liquid/))
+1. T4 Templates ([reference docs](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019))
+1. XSL Templates ([reference docs](https://www.w3.org/Style/XSL/))
+1. Scriban or Liquid Templates ([reference docs](https://shopify.github.io/liquid/))
+1. Mustache Templates  ([reference docs](https://mustache.github.io/mustache.5.html))
 
 > ##### Worthy Mentions
 > **Mustache**:
-> Other C# ports found at [mustache-sharp](https://github.com/jehugaleahsa/mustache-sharp) and [nustache](https://github.com/jdiamond/Nustache)
+> Other C# ports found at [mustache-sharp](https://mustache.github.io/mustache.5.html) and [nustache](https://github.com/jdiamond/Nustache)
 
 
 ## Razor Templates
@@ -125,12 +126,32 @@ Scriban project (which supports Liquid templates as well) can be found here:  ht
 </ul>
 ```
 
+## Mustache Templates
 
+Mustache Templates, are very widely used in html but also for general code generation. They are logic-less templates in that the contain no for-loops or logic
+
+### Advantages
+- Very fast
+
+### Disadvantages
+- No logic can be embedded in the templates
+
+#### Sample
+```html
+<h3>FullName: {{FullName}}</h3>
+<h3>Skills:</h3>
+<ul>
+{{#Skills}}
+    <li> {{.}} </li>
+{{/Skills}}
+</ul>
+```
 ## Performance 
 
 |Engine|Time (ms)|
 |------|---------|
 |T4|3|
+|Mustache|91|
 |Liquid|127|
 |Xsl|303|
 |Razor|2392|
