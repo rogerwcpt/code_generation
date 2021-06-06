@@ -1,0 +1,22 @@
+<h1>Output of Person Liquid Template</h1>
+<h2>User Details</h2>
+<h3>FullName: {{ full_name }}</h3>
+<h3>Company: {{ company }}</h3>
+<h3>Skills:</h3>
+<ul>
+    {% for skill in skills %}
+    <li> {{ skill }} </li>
+    {% endfor %}
+</ul>
+<h5>Sample C# Generated Code</h5>
+<pre>
+  <code>
+    public class PersonModel
+    {
+        public string FullName { get; set;  }
+        public string EmailAddress { get; set;  }
+        public string[] Skills { get; set;  }
+        public string Company { get; set; }
+    }
+  </code>
+</pre>

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using System.Reflection.Emit;
 using CodeGeneration.Generators;
 using CodeGeneration.Helpers;
 using CodeGeneration.Models;
@@ -14,6 +12,7 @@ namespace CodeGeneration
         private static readonly ICodeGenerator RazorGenerator = new RazorCodeGenerator();
         private static readonly ICodeGenerator T4Generator = new T4CodeGenerator();
         private static readonly ICodeGenerator XslGenerator = new XslCodeGenerator();
+        private static readonly ICodeGenerator LiquidGenerator = new LiquidGenerator();
 
         static void Main(string[] args)
         {
@@ -25,7 +24,7 @@ namespace CodeGeneration
                 FullName = "John Smith",
                 EmailAddress = "john.smith@microsoft.com",
                 Company = "Microsoft",
-                Skills = new [] { "C#", "Razor", "XML", "HTML" }
+                Skills = new [] { "C#", "HTML", "XML", "HTML" }
             };
 
             using (_ = new StopWatchLogger())
@@ -33,17 +32,23 @@ namespace CodeGeneration
                 var razorResult = RazorGenerator.Generate(rootPath, "PersonRunTime.razor", model);
                 OutputToConsole(RazorGenerator, razorResult);
             }
-
+            
             using (_ = new StopWatchLogger())
             {
                 var t4Result = T4Generator.Generate(rootPath, "PersonCompileTime.tt", model);
-                OutputToConsole(RazorGenerator, t4Result);
+                OutputToConsole(T4Generator, t4Result);
             }
             
             using (_ = new StopWatchLogger())
             {
                 var t4Result = XslGenerator.Generate(rootPath, "PersonRunTime.xsl", model);
-                OutputToConsole(RazorGenerator, t4Result);
+                OutputToConsole(XslGenerator, t4Result);
+            }
+            
+            using (_ = new StopWatchLogger())
+            {
+                var liquidResult = LiquidGenerator.Generate(rootPath, "PersonRunTime.liquid", model);
+                OutputToConsole(LiquidGenerator, liquidResult);
             }
         }       
 
