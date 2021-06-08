@@ -86,6 +86,7 @@ Xsl templates have been around for decades and a W3C standard and has been suppo
 - Syntax not as simple as Razor  
 - Have to deal with xml namespaces and verbose syntax
 - Cannot embed C# helper methods to aid in code generation
+- .NET Core still only suports XSLT 1.0
 
 
 #### Sample
@@ -155,6 +156,16 @@ A fairly active GitHub repo (at the time of this commit) thta supports Mustache 
 |Liquid|127|
 |Xsl|303|
 |Razor|2392|
+
+## Nuget/Repo Stats as of 8 June 2021 
+
+|Package|Repo Stars|Most downloads for a version in the last year|
+|------|-----------|-----------------------------|
+|Mono.TextTemplating (for T4) |215|6,788|
+|Stubble.Core (for Mustache)|258|427,328|
+|Scriban (for Liquid)|1,500|86,091|
+|Xsl|n/a|n/a (part of .NET Core)|
+|RazorEngineCore|205|28,379|
 
 ## Template Output
 <img src="https://user-images.githubusercontent.com/13134927/120923467-00453e80-c6cf-11eb-88b0-3e36d682f6ce.png" width="400px" />
