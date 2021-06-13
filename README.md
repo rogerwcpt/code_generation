@@ -10,11 +10,6 @@ The templates that are included so far are
 1. Scriban or Liquid Templates ([reference docs](https://shopify.github.io/liquid/))
 1. Mustache Templates  ([reference docs](https://mustache.github.io/mustache.5.html))
 
-> ##### Worthy Mentions
-> **Mustache**:
-> Other C# ports found at [mustache-sharp](https://mustache.github.io/mustache.5.html) and [nustache](https://github.com/jdiamond/Nustache)
-
-
 ## Razor Templates
 
 Razor Templates have clean syntax and a pleasure to use, but strangely there is no Razor Engine in .NET 5.0 so one has to rely on a project on a GitHub project
